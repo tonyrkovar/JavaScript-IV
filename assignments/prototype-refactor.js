@@ -25,16 +25,8 @@ class GameObject{
         return `${this.name} was removed from the game`;
     }
 };
-// function GameObject(character){
-//     this.createdAt = character.createdAt;
-//     this.name = character.name;
-//     this.dimensions = character.dimensions;
-//   };
-  
-//   GameObject.prototype.destroy = function(){
-//     return `${this.name} was removed from the game`
-//   };
-  
+
+
   /*
     === CharacterStats ===
     * healthPoints
@@ -52,15 +44,6 @@ class CharacterStats extends GameObject{
     }
 };
 
-//   function CharacterStats(stats){
-//     GameObject.call(this, stats);
-//     this.healthPoints = stats.healthPoints;  
-//   }
-//   CharacterStats.prototype = Object.create(GameObject.prototype);
-//   CharacterStats.prototype.takeDamage = function(){
-//     return `${this.name} took damage.`;
-//   }
-  
   /*
     === Humanoid (Having an appearance or character resembling that of a human.) ===
     * team
@@ -82,18 +65,7 @@ class Humanoid extends CharacterStats{
        return `${this.name} offers a greeting in ${this.language}`;
     }
 }
-
-//   function Humanoid(type){
-//     CharacterStats.call(this, type)
-//     this.team = type.team;
-//     this.weapons = type.weapons;
-//     this.language = type.language;
-//   }
-//   Humanoid.prototype = Object.create(CharacterStats.prototype);
-//   Humanoid.prototype.greet = function(){
-//     return `${this.name} offers a greeting in ${this.language}.`;
-//   };
-  
+ 
   
   /*
     * Inheritance chain: GameObject -> CharacterStats -> Humanoid
