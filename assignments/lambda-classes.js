@@ -32,14 +32,16 @@ class Student extends Person{
         this.className = studentAtt.className;
         this.favSubjects = studentAtt.favSubjects;
     }
-    listSubjects(...listed){
-        return `My favorite subjects are: ${listed}`;
+    listSubjects(studentAtt){
+            for (let x of this.favSubjects){
+                console.log(` One of ${studentAtt.name}'s favorite subjects is ${x}`);
+            }
     }
-    PRAssignment(studentAtt){
-        return `${studentAtt.name} has submitted a PR for ${studentAtt.favSubjects}`;
+    PRAssignment(studentAtt, subject){
+        return `${studentAtt.name} has submitted a PR for ${subject}`;
     }
-    sprintChallenge(studentAtt){
-        return `${studentAtt.name} has begun sprint challenge on ${studentAtt.favSubjects}`;
+    sprintChallenge(studentAtt, subject){
+        return `${studentAtt.name} has begun sprint challenge on ${subject}`;
     }
 }
 
@@ -68,74 +70,86 @@ const fred = new Instructor({
     favLanguage: 'JavaScript',
     specialty: 'Front-end',
     catchPhrase: `Don't forget the homies`
-  });
+});
 
 
-  const jamie = new Instructor({
+const jamie = new Instructor({
     name: 'Jamie',
     location: 'Kings Landing',
     age: 37,
     favLanguage: 'CSS',
     specialty: 'King Slaying',
     catchPhrase: `Don't forget the homies`
-  });
+});
 
 
 
-  const nicholas = new Instructor({
+const nicholas = new Instructor({
     name: 'Nicholas',
     location: 'The Wall',
     age: 22,
     favLanguage: 'CSS',
     specialty: 'Front-end',
     catchPhrase: `I dun wan' it`
-  });
+});
 
 
 
-  const kevin = new Student({
+const kevin = new Student({
     name: 'Kevin',
     location: 'Boston',
     age: 29,
     previousBackground: 'Nerd',
     className: 'CS2',
-    favSubjects: 'Oreos'
-  });
+    favSubjects: [
+    'Python',
+    'CSS',
+    'HTML',
+    'JavaScript']
+});
 
 
-  const kaladin = new Student({
+const kaladin = new Student({
     name: 'Kaladin',
     location: 'Uritheru',
     age: 25,
     previousBackground: 'Doctors Apprentice',
     className: 'Windrunner',
-    favSubjects: 'Brooding'
+    favSubjects: [
+    'Python',
+    'CSS',
+    'HTML',
+    'JavaScript']
 });
 
 
-  const lindsey = new Student({
+const lindsey = new Student({
     name: 'Lindsey',
     location: 'The Bay',
     age: 66,
     previousBackground: 'runner',
     className: 'WebFT',
-    favSubjects: 'React'
-  });
+    favSubjects: [
+    'Python',
+    'CSS',
+    'HTML',
+    'JavaScript']
+});
 
 
-  const erica = new ProjectManager({
+const erica = new ProjectManager({
     name: 'Erica',
     location: 'Seattle',
     age: 28,
     favLanguage: 'JavaScript',
     specialty: 'Front-end',
     catchPhrase: `Commit -m 'my god this better work'`,
-    gradeClassName: 'What is this even',
+    gradeClassName: 'Python masters',
     favInstructor: 'Britt'
-  });
-  
+});
 
-  const john = new ProjectManager({
+
+const john = new ProjectManager({
     name: 'John',
     location: 'Maine',
     age: 50,
@@ -144,10 +158,10 @@ const fred = new Instructor({
     catchPhrase: `That's what I do, I drink and I know things`,
     gradeClassName: 'UI/UX',
     favInstructor: 'Mike'
-  });
+});
 
-  
-  const james = new ProjectManager({
+
+const james = new ProjectManager({
     name: 'James',
     location: 'Texas',
     age: 31,
@@ -156,13 +170,13 @@ const fred = new Instructor({
     catchPhrase: `Don't forget the hydro-homies`,
     gradeClassName: 'Dunny',
     favInstructor: 'Ryan'
-  });
+});
 
-  console.log(kevin.listSubjects(' math', ' english', ' science', ' poetry', ' chemistry', ' physics'))
-  console.log(fred.demo('methods'));
-  console.log(erica.standup(erica,'general' ))
-  console.log(james.debugsCode(james,kevin,))
-  console.log(lindsey.PRAssignment(lindsey))
-  console.log(kaladin.sprintChallenge(kaladin))
-  console.log(jamie.demo('Underground dance fights'))
-  console.log(nicholas.grade(nicholas, `Underground Dance Fighting`))
+console.log(kevin.listSubjects(kevin))
+console.log(fred.demo('methods'));
+console.log(erica.standup(erica,'general' ))
+console.log(james.debugsCode(james,kevin,))
+console.log(lindsey.PRAssignment(lindsey, 'Python'))
+console.log(kaladin.sprintChallenge(kaladin, 'Java'))
+console.log(jamie.demo('Underground dance fights'))
+console.log(nicholas.grade(nicholas, `Underground Dance Fighting`))
